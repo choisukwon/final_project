@@ -83,7 +83,7 @@ void *receiver(void* args){
 				break;
 			}
 			printf("%s : %s\n", RECV, recv_message);
-			memset(recv_message, '\0', sizeof(recv_message));
+			memset(recv_message, '\0sizeof(recv_message));
 		}
 	}
 }
@@ -94,7 +94,7 @@ int main(int argc, char** argv){
 	struct mq_attr	attr;
 	int  newthread, status=0;
 	char logname[10];
-	sprintf(logname, "client1log.txt","client1log");
+	sprintf(logname, "client1log.txt");
 
 	pthread_mutex_init(&mutex, NULL);
 	attr.mq_maxmsg = MAX_MSG;

@@ -24,7 +24,7 @@ char log_message [MAX_LOG];
 char *ptr = '\0';
 time_t ltime;
 struct tm *today;
-short in_user = 0;
+int in_user = 0;
 
 void logg_f(char* str, char* user){
 	pthread_mutex_lock(&mutex);

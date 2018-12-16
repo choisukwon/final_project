@@ -62,7 +62,7 @@ void *sender(void* args){
 				exit(0);
 			}
 			printf("%s : %s \n", SEND, send_message);
-		}
+		} 
 	}
 }
 

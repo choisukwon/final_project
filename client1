@@ -123,7 +123,7 @@ int main(int argc, char** argv){
 	printf("대화를 시작합니다. 대화에서 나가고 싶으시다면 /q를 입력해주세요.\n");
 	strcpy(send_message, "/s");
 	mq_send(mq4, send_message, strlen(send_message), 0);
-
+ 
 	pthread_join(sendthread, (void**)&status);
 	pthread_join(recvthread, (void**)&status);
 

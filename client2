@@ -93,7 +93,7 @@ void *receiver(void* args){
 int main(int argc, char** argv){
 	pthread_t	sendthread, recvthread;
 	struct mq_attr	attr;
-	int  ret, status=0;
+	int  newthread, status=0;
 	char logname[10];
 	sprintf(logname, "client2log.txt");
 
@@ -110,14 +110,14 @@ int main(int argc, char** argv){
 		exit(0);
 	}
 
-	ret = pthread_create(&sendthread, NULL, sender, (void*)&mq2);
-	if( ret < 0 ){
+	newthread = pthread_create(&sendthread, NULL, sender, (void*)&mq2);
+	if( newthread < 0 ){
 		perror("mq2 생성 오류 : ");
 		exit(0);
 	}
 
-	ret = pthread_create(&recvthread, NULL, receiver, (void*)&mq4);
-	if( ret < 0){
+	newthread = pthread_create(&recvthread, NULL, receiver, (void*)&mq4);
+	if( newthread < 0){
 		perror("mq4 생성 오류 : ");
 		exit(0);
 	}
